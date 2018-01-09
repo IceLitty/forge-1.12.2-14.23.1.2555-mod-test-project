@@ -33,6 +33,7 @@ public class growBlock extends Block implements IGrowable {
         this.setCreativeTab(CreativeTabs.FOOD);
         this.setUnlocalizedName(localName);
         this.setRegistryName(name);
+//        this.setTickRandomly(true);
         this.setDefaultState(this.blockState.getBaseState()
                 .withProperty(STAGE, 0)
         );
@@ -71,15 +72,11 @@ public class growBlock extends Block implements IGrowable {
 
     @Override
     public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-        if ((state.getValue(STAGE)).equals(0))
-        {
+        if (!worldIn.isRemote) {
+            int before = state.getValue(STAGE);
             worldIn.setBlockState(pos, state.cycleProperty(STAGE), 4);
-            System.out.println("cycle 0, now -> " + worldIn.getBlockState(pos).getValue(STAGE));
-        }
-        else
-        {
-            worldIn.setBlockState(pos, state.cycleProperty(STAGE), 4);
-            System.out.println("cycle 1, now -> " + worldIn.getBlockState(pos).getValue(STAGE));
+            System.out.println("cycle " + before + ", now -> " + worldIn.getBlockState(pos).getValue(STAGE));
+            worldIn.scheduleUpdate(pos, this, 0);
         }
     }
 }
