@@ -1,0 +1,16 @@
+[
+{
+  "modid": "icykingdoms",
+  "name": "Icy Kingdoms Mod",
+  "description": "Icy's Mod.",
+  "version": "1.0.0",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["IceLitty"],
+  "credits": "Made by IceLitty.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

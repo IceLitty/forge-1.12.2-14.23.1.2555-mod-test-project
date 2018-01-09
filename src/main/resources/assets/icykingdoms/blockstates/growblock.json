@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "stage=0": { "model": "coal_ore" },
+    "stage=1": { "model": "diamond_ore" }
+  }
+}

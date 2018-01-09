@@ -1,0 +1,15 @@
+{
+  "type": "crafting_shapeless",
+  "group": "icy",
+  "ingredients": [
+    {
+      "item": "stone"
+    },
+    {
+      "item": "stone"
+    }
+  ],
+  "result": {
+    "item": "icykingdoms:growblock"
+  }
+}
