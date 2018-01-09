@@ -76,7 +76,15 @@ public class growBlock extends Block implements IGrowable {
             int before = state.getValue(STAGE);
             worldIn.setBlockState(pos, state.cycleProperty(STAGE), 4);
             System.out.println("cycle " + before + ", now -> " + worldIn.getBlockState(pos).getValue(STAGE));
-            worldIn.scheduleUpdate(pos, this, 0);
+//            this.requiresUpdates();
+//            worldIn.updateObservingBlocksAt(pos, this);
+//            worldIn.markBlockRangeForRenderUpdate(pos, pos);
+//            worldIn.notifyBlockUpdate(pos, state, state.withProperty(STAGE, 1), 4);
+//            worldIn.scheduleUpdate(pos, this, 0);
+//            worldIn.scheduleBlockUpdate(pos, this, 0, 1);
+//            worldIn.markAndNotifyBlock(pos, worldIn.getChunkFromBlockCoords(pos), state, state.withProperty(STAGE, 1), 4);
+//            worldIn.markBlocksDirtyVertical(pos.getX(), pos.getZ(), pos.getY(), pos.getY());
+//            worldIn.updateBlockTick(pos, this, 0, 1);
         }
     }
 }
